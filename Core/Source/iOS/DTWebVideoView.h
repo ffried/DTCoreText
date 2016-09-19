@@ -8,26 +8,26 @@
 
 #import <DTFoundation/DTWeakSupport.h>
 
-@class DTWebVideoView;
+//@class DTWebVideoView;
 @class DTTextAttachment;
 
-/**
- Protocol for delegates of <DTWebVideoView>
-*/
-@protocol DTWebVideoViewDelegate <NSObject>
-
-@optional
-
-/**
- Asks the delegate if an external URL may be opened
- @param videoView The web video view
- @param url The external URL that is asked to be opened
- @returns `YES` if the app may be left to open the external URL
- */
-
-- (BOOL)videoView:(DTWebVideoView *)videoView shouldOpenExternalURL:(NSURL *)url;
-
-@end
+///**
+// Protocol for delegates of <DTWebVideoView>
+//*/
+//@protocol DTWebVideoViewDelegate <NSObject>
+//
+//@optional
+//
+///**
+// Asks the delegate if an external URL may be opened
+// @param videoView The web video view
+// @param url The external URL that is asked to be opened
+// @returns `YES` if the app may be left to open the external URL
+// */
+//
+//- (BOOL)videoView:(DTWebVideoView *)videoView shouldOpenExternalURL:(NSURL *)url NS_EXTENSION_UNAVAILABLE("Cannot open external URLs in an extension.");
+//
+//@end
 
 
 /**
@@ -42,7 +42,7 @@
 /**
  The delegate of the video view
  */
-@property (nonatomic, DT_WEAK_PROPERTY) id <DTWebVideoViewDelegate> delegate;
+//@property (nonatomic, DT_WEAK_PROPERTY) id <DTWebVideoViewDelegate> delegate;
 
 /**
  The text attachment representing an embedded video.

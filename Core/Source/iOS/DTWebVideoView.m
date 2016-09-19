@@ -20,7 +20,7 @@
 {
 	DTTextAttachment *_attachment;
 	
-	DT_WEAK_VARIABLE id <DTWebVideoViewDelegate> _delegate;
+//	DT_WEAK_VARIABLE id <DTWebVideoViewDelegate> _delegate;
 	
 	UIWebView *_webView;
 }
@@ -73,7 +73,6 @@
 }
 
 #pragma mark UIWebViewDelegate
-
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
 	// allow the embed request for YouTube
@@ -88,24 +87,22 @@
 		return YES;
 	}
 
-	BOOL shouldOpenExternalURL = YES;
-	
-	if ([_delegate respondsToSelector:@selector(videoView:shouldOpenExternalURL:)])
-	{
-		shouldOpenExternalURL = [_delegate videoView:self shouldOpenExternalURL:[request URL]];
-	}
-	
-#if !defined(DT_APP_EXTENSIONS)
-	if (shouldOpenExternalURL)
-	{
-		[[UIApplication sharedApplication] openURL:[request URL]];
-	}
-#endif
-	
+//	BOOL shouldOpenExternalURL = YES;
+//	
+//	if ([_delegate respondsToSelector:@selector(videoView:shouldOpenExternalURL:)])
+//	{
+//		shouldOpenExternalURL = [_delegate videoView:self shouldOpenExternalURL:[request URL]];
+//	}
+//	
+//#if !defined(DT_APP_EXTENSIONS)
+//	if (shouldOpenExternalURL)
+//	{
+//		[[UIApplication sharedApplication] openURL:[request URL]];
+//	}
+//#endif
+//	
 	return NO;
 }
-
-
 
 #pragma mark Properties
 
@@ -124,7 +121,7 @@
 	}
 }
 
-@synthesize delegate = _delegate;
+//@synthesize delegate = _delegate;
 @synthesize attachment = _attachment;
 
 @end
