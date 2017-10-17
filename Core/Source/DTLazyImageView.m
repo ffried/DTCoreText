@@ -363,8 +363,10 @@ didCompleteWithError:(nullable NSError *)error
 #endif
 	
 	/* For progressive download */
-	if (_imageSource)
-		CFRelease(_imageSource), _imageSource = NULL;
+	if (_imageSource) {
+		CFRelease(_imageSource);
+		_imageSource = NULL;
+	}
 	
 	CFRunLoopStop(CFRunLoopGetCurrent());
 
@@ -384,8 +386,10 @@ didCompleteWithError:(nullable NSError *)error
 	_receivedData = nil;
 	
 	/* For progressive download */
-	if (_imageSource)
-		CFRelease(_imageSource), _imageSource = NULL;
+	if (_imageSource) {
+		CFRelease(_imageSource);
+		_imageSource = NULL;
+	}
 	
 	CFRunLoopStop(CFRunLoopGetCurrent());
 
